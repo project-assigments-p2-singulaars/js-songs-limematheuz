@@ -9,6 +9,7 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "npm": "^10.5.2",
     "vitest": "^1.4.0"
   }
 }

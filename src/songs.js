@@ -34,14 +34,28 @@ function orderAlphabetically(songs) {
 orderAlphabetically(songs);
 
 //Exercise 4: Order by year, ascending
-function orderByYear() {
-  //Write your code here
+function orderByYear(songs) {
+  const yearOrder = songs.sort((a, b) => {
+    if (a.year < b.year) {
+      return -1;
+    } else if (a.year > b.year) {
+      return 1;
+    }
+    return 0;
+  });
+  console.log(yearOrder);
 }
+orderByYear(songs);
 
 //Exercise 5: Filter songs by genre
-function songsByGenre() {
-  //Write your code here
+function songsByGenre(songs, genre) {
+  const getSongsGenre = songs.filter((song) => song.genre.includes(genre));
+  console.log(getSongsGenre);
+  return getSongsGenre;
 }
+
+const rAndBGenre = songsByGenre(songs, "R&B");
+console.log(rAndBGenre);
 
 //Exercise 6: Modify the duration of songs to seconds
 function minutsToSeconds() {
@@ -49,9 +63,38 @@ function minutsToSeconds() {
 }
 
 //Exercise 7: Get the longest song
-function getLongestSong() {
-  //Write your code here
-}
+
+
+
+// function getLongestSong(songs) {
+//   let longestDuration = 0;
+//   let longestSong = null;
+
+//   songs.forEach(function (song) {
+//     let durationInSecoinds = convertToSeconds(song.duration);
+
+//     if (durationInSecoinds > longestDuration) {
+//       longestDuration = durationInSecoinds;
+//       longestSong = song;
+//     }
+//   });
+//   return longestSong;
+// }
+
+// function convertToSeconds(minutes) {
+//   let seconds = minutes * 60;
+//   return seconds;
+// }
+
+// let longestSong = getLongestSong(songs);
+// console.log(longestSong);
+
+
+
+
+
+
+
 
 //Exercise 8: Get the shortest song
 //Write the getShortestSong() function
