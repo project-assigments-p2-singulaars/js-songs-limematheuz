@@ -66,28 +66,31 @@ function minutsToSeconds() {
 
 
 
-// function getLongestSong(songs) {
-//   let longestDuration = 0;
-//   let longestSong = null;
+function getLongestSong(songs) {
+  let longestDuration = 0;
+  let longestSong = null;
 
-//   songs.forEach(function (song) {
-//     let durationInSecoinds = convertToSeconds(song.duration);
+  songs.forEach(function (song) {
+    let durationInSecoinds = convertToSeconds(song.duration);
 
-//     if (durationInSecoinds > longestDuration) {
-//       longestDuration = durationInSecoinds;
-//       longestSong = song;
-//     }
-//   });
-//   return longestSong;
-// }
+    if (durationInSecoinds > longestDuration) {
+      longestDuration = durationInSecoinds;
+      longestSong = song;
+    }
+  });
+  return longestSong;
+}
 
-// function convertToSeconds(minutes) {
-//   let seconds = minutes * 60;
-//   return seconds;
-// }
+function convertToSeconds(duration) {
+  let [minutes, seconds] = duration.split('min ');
+  minutes = parseInt(minutes);
+  seconds = parseInt(seconds);
+  return minutes * 60 + seconds;
+}
 
-// let longestSong = getLongestSong(songs);
-// console.log(longestSong);
+
+let longestSong = getLongestSong(songs);
+console.log(longestSong);
 
 
 
